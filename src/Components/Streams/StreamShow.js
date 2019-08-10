@@ -16,6 +16,10 @@ class StreamShow extends Component {
   componentDidUpdate() {
       this.buildPlayer();
   }
+  //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
+  componentWillUpdate(nextProps, nextState) {
+    this.player.destroy();
+  }
   buildPlayer(){
       if(this.player || !this.props.stream){
           return;
